@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:allen/secrets.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class OpenAIService {
@@ -25,7 +26,7 @@ class OpenAIService {
           ],
         }),
       );
-      print(res.body);
+      debugPrint(res.body);
       if (res.statusCode == 200) {
         String content =
             jsonDecode(res.body)['choices'][0]['message']['content'];
